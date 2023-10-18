@@ -12,6 +12,14 @@ const carSchema= require('./model/Car')
 mongoose.connect('mongodb+srv://test:1234@cluster0.zega40w.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser: true})
   .then(() => console.log('Connected!'));
 
+
+app.get("/",(req,res)=>{
+  res.setHeader("Access-Control-Allow-Credentials","true");
+  res.send("api is runing...");
+
+});
+
+
   app.post("/create", async (req, res) => {
 
         
